@@ -78,7 +78,7 @@ int main() {
     fprintf(fp,"======== lotto649 ========\n");
     fprintf(fp,"=======+ No.%05d +=======\n",counter[0]);
     fprintf(fp,"%s",ctime(&curtime));
-    for(int j=1;j<=i;j++) {
+    for(int j=1;j<=i && j<=5;j++) {
         fprintf(fp,"[%d]: ",j);
         print_value(fp);
     }
