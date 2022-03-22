@@ -3,19 +3,19 @@
 #include <string.h>
 #include <time.h>
 
-typedef struct lotto_record {
+typedef struct record {
   int lotto_no;
   int lotto_receipt;
-  int emp_id;
-  char lotto_date[9];
-  char lotto_time[9];
-} lotto_record_t;
+  int lotto_emp_id;
+  char lotto_date[128];
+  char lotto_time[128];
+}typerecord;
 
 int main() {
   FILE* fp, * rfp = fopen("records.bin", "r");
   char now[9], doi[9] = "";
   int slots = 0, receipts = 0, tdoi = 1, tslots = 0, treceipts = 0;
-  lotto_record_t record[1];
+  typerecord record[1];
   time_t date = time(NULL);
   srand((unsigned)time(NULL));
   if (rfp == NULL) {
@@ -24,7 +24,7 @@ int main() {
   } else fp = fopen("report.txt", "w+");
   fprintf(fp, "========= lotto649 Report =========\n");
   fprintf(fp, "- Date ------ Num. ------ Receipt -\n");
-  for (int i = 0; fread(record, sizeof(lotto_record_t), sizeof(record) / sizeof(record[0]), rfp); i++) {
+  for (int i = 0; fread(record, sizeof(typerecord), sizeof(record) / sizeof(record[0]), rfp); i++) {
     if (doi[0] == '\0' || strcmp(doi, record[0].lotto_date) == 0) {
       sprintf(doi, "%s", record[0].lotto_date);
       slots++;
