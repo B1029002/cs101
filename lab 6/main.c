@@ -3,21 +3,25 @@
 int _sum(int x, int y) {
     int sum;
     sum = x + y;
+    return sum;
 }
 
 int _sub(int x, int y) {
     int sub;
     sub = x - y;
+    return sub;
 }
 
 int _mult(int x, int y) {
     int mult;
     mult = x * y;
+    return mult;
 }
 
 int _div(int x, int y) {
     int i;
     i = x / y;
+    return i;
 }
 
 int _power(int x, int y) {
