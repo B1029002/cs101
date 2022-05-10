@@ -1,10 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
+/*typedef struct node {
     int data;
     struct node* next;
-}node_t;
+}node_t;*/
+
+struct node {
+    int data;
+    struct node* next;
+};
+typedef struct node node_t;
 
 node_t* allocate_node(int data) {
    node_t *newNode = malloc(sizeof(node_t));
