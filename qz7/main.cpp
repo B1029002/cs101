@@ -29,7 +29,6 @@ class ReadClass{
                             outp+=pt+"\n";
                             counter++;
                         }
-                            
                     }
                 }
             }
